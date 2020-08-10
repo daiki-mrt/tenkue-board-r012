@@ -5,21 +5,27 @@
     </h1>
     <% if user_signed_in? %>
       <ul class="header__bar__user_nav">
-        <li>
+        <li class="user_name">
           <span><%= current_user.name %> さん</span>
         </li>
-        <li>
+        <li class="header__bar__user_nav__btn">
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
         </li>
-        <li>
+        <li class="header__bar__user_nav__btn">
           <%= link_to "投稿する", new_post_path %>
         </li>
       </ul>
     <% else %>
       <ul class="header__bar__user_nav">
-        <li><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post %></li>
-        <li><%= link_to "ログイン", new_user_session_path %></li>
-        <li><%= link_to "新規登録", new_user_registration_path %></li>
+        <li class="header__bar__user_nav__btn"
+          ><%= link_to 'ゲストログイン', users_guest_sign_in_path, method: :post %>
+        </li>
+        <li class="header__bar__user_nav__btn">
+          <%= link_to "ログイン", new_user_session_path %>
+        </li>
+        <li class="header__bar__user_nav__btn">
+          <%= link_to "新規登録", new_user_registration_path %>
+        </li>
       </ul>
     <% end %>
   </div>
