@@ -1,5 +1,5 @@
 <div id="account_page" class="account_page">
-  <div class="account_page__inner clearfix">
+  <div class="account_page__inner">
     <div class="account_page__inner--left account_page__header">
       <h2>Sign up</h2>
       <h5>新規登録</h5>
@@ -11,10 +11,19 @@
 
         <div class="field">
           <div class="field_label">
+            <%= f.label :name %>
+          </div>
+          <div class="field_input">
+            <%= f.text_field :name, autofocus: true %>
+          </div>
+        </div>
+
+        <div class="field">
+          <div class="field_label">
             <%= f.label :email %>
           </div>
           <div class="field_input">
-            <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+            <%= f.email_field :email, autocomplete: "email" %>
           </div>
         </div>
 
