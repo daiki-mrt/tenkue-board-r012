@@ -9,7 +9,7 @@
           <span><%= current_user.name %></span>
         </li>
         <li>
-          <%= link_to "マイページ", user_path(current_user), method: :get %>
+          <%# <%= link_to "マイページ", user_path(current_user), method: :get %>
         </li>
         <li>
           <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
