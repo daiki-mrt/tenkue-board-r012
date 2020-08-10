@@ -7,11 +7,12 @@
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-    <%= favicon_link_tag('/assets/favicon.png') %>
+    <%= favicon_link_tag('favicon.ico') %>
   </head>
 
   <body>
     <%= render 'layouts/header'%>
+    <%= render 'layouts/notifications' %>
     <div class="wrapper">
       <%= yield %>
     </div>

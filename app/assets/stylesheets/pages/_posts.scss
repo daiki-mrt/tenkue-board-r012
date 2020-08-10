@@ -48,6 +48,7 @@
         text-align: center;
       }
       .post {
+        margin-bottom: 12px;
         border: $border_style_default;
         border-radius: 3px;
         box-shadow: $shadow_content;
@@ -96,8 +97,11 @@
         }
       }
     }
+    .back_link {
+      margin: 16px 48px 12px;
+    }
     &__post_show {
-      padding: 48px;
+      padding: 0 48px;
       .post_detail {
         padding: 24px;
         border: $border_style_default;
