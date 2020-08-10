@@ -44,6 +44,10 @@
     }
     &__post_list {
       padding: 48px;
+      & a {
+        text-decoration: none;
+        color: black;
+      }
       & h4 {
         text-align: center;
       }
@@ -52,10 +56,6 @@
         border: $border_style_default;
         border-radius: 3px;
         box-shadow: $shadow_content;
-        & a {
-          text-decoration: none;
-          color: black;
-        }
         &__top_box {
           display: flex;
           justify-content: space-between;
