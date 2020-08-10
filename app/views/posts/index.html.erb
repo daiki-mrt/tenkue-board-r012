@@ -4,40 +4,50 @@
       <span>投稿一覧</span>
     </h3>
     <ul class="post_wrapper__content__post_list">
-      <% @posts.each do |post| %>
-        <li class="post">
-          <div class="post__top_box">
-            <div class="post__top_box__name">
-              <span>投稿者：<%= post.user.name %></span>
-            </div>
-            <div class="post__top_box__name">
-              <span>投稿日時：<%= show_posted_time(post.created_at) %></span>
-            </div>
-          </div>  
-          <div class="post__middle_box">
-            <span><%= post.text %></span>
-          </div>
-          <div class="post__bottom_box">
-            <ul class="post__bottom_box__user_actions">
-              <li>
-                <i class="far fa-comment-alt"></i>
-              </li>
-              <li>
-                <i class="far fa-heart"></i>
-              </li>
-            </ul>
-            <% if post.user == current_user %>
-              <ul class="post__bottom_box__admin_actions">
-                <li>
-                  <%= link_to '編集', edit_post_path(post.id) %>
-                </li>
-                <li>
-                  <%= link_to '削除', post_path(post.id), method: :delete, data: { confirm: '本当に削除して良いですか?', cancel: 'やめる', commit: '削除する', disable_with: "処理中..."}, title: '削除確認' %>
-                </li>
-              </ul>
-            <% end %>
-          </div>
-        </li>
+      <% if @posts.count != 0%>
+        <% @posts.each do |post| %>
+          <%= link_to post_path(post.id), class: "link" do %>
+          <li>
+              <div class="post">
+                <div class="post__top_box">
+                  <div class="post__top_box__name">
+                    <span>投稿者：<%= post.user.name %></span>
+                  </div>
+                  <div class="post__top_box__name">
+                    <span>投稿日時：<%= show_posted_time(post.created_at) %></span>
+                  </div>
+                </div>  
+                <div class="post__middle_box">
+                  <span><%= post.text %></span>
+                </div>
+                <div class="post__bottom_box">
+                  <ul class="post__bottom_box__user_actions">
+                    <li>
+                      <i class="far fa-comment-alt"></i>
+                    </li>
+                    <li>
+                      <i class="far fa-heart"></i>
+                    </li>
+                  </ul>
+                  <% if post.user == current_user %>
+                    <ul class="post__bottom_box__admin_actions">
+                      <li>
+                        <%= link_to '編集', edit_post_path(post.id) %>
+                      </li>
+                      <li>
+                        <%= link_to '削除', post_path(post.id), method: :delete, data: { confirm: '本当に削除して良いですか?', cancel: 'やめる', commit: '削除する', disable_with: "処理中..."}, title: '削除確認' %>
+                      </li>
+                    </ul>
+                  <% end %>
+                </div>
+              </div>
+            </li>
+          <% end %>
+        <% end %>
+      <% else %>
+        <h4>
+          <span>まだ投稿されたスレッドはありません。</span>
+        </h4>
       <% end %>
     </ul>
   </div>
