@@ -62,3 +62,6 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'devise'
 gem 'font-awesome-sass'
+gem 'bootstrap-sass'
+gem 'data-confirm-modal'
+gem 'jquery-rails'
