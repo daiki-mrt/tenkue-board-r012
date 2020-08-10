@@ -1,3 +1,24 @@
 <div class="post_wrapper">
-  投稿一覧
+  <div class="post_wrapper__content">
+    <h3>
+      <span>投稿一覧</span>
+    </h3>
+    <ul class="post_wrapper__content__post_list">
+      <% @posts.each do |post| %>
+        <li class="post">
+          <div class="post__top_box">
+            <div class="post__top_box__name">
+              <span>投稿者：<%= post.user.name %></span>
+            </div>
+            <div class="post__top_box__name">
+              <span>投稿日時：<%= post.created_at %></span>
+            </div>
+          </div>
+          <div class="post__bottom_box">
+            <%= post.text %>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
 </div>
