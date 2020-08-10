@@ -44,7 +44,61 @@
     }
     &__post_list {
       padding: 48px;
+      & h4 {
+        text-align: center;
+      }
       .post {
+        border: $border_style_default;
+        border-radius: 3px;
+        box-shadow: $shadow_content;
+        & a {
+          text-decoration: none;
+          color: black;
+        }
+        &__top_box {
+          display: flex;
+          justify-content: space-between;
+          padding: 16px 24px;
+          color: $color_note;
+        }
+        &__middle_box {
+          padding: 8px 24px;
+          font-size: $font_size_content;
+          & span {
+            white-space: pre-wrap;
+          }
+        }
+        &__bottom_box {
+          display: flex;
+          justify-content: space-between;
+          padding: 8px 24px;
+          font-size: $font_size_icon;
+          &__user_actions {
+            display: flex;
+            justify-content: space-between;
+            width: 128px;
+            padding: 0 12px;
+            cursor: pointer;
+          }
+          &__admin_actions {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80px;
+            font-size: $font_size_defalt;
+            & a {
+              color: $color_link;
+            }
+            & :hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+    &__post_show {
+      padding: 48px;
+      .post_detail {
         padding: 24px;
         border: $border_style_default;
         border-radius: 3px;
@@ -53,10 +107,14 @@
           display: flex;
           justify-content: space-between;
           color: $color_note;
+          font-size: $font_size_note_detail;
         }
         &__middle_box {
-          margin: 24px 0;
-          font-size: $font_size_content;
+          margin: 32px 0;
+          font-size: $font_size_content_detail;
+          & span {
+            white-space: pre-wrap;
+          }
         }
         &__bottom_box {
           display: flex;
@@ -70,10 +128,7 @@
             cursor: pointer;
           }
           &__admin_actions {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            width: 80px;
+            line-height: 31px;
             font-size: $font_size_defalt;
           }
         }
