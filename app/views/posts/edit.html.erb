@@ -1,0 +1,12 @@
+<div class="post_wrapper">
+  <div class="post_wrapper__content">
+    <div class="post_wrapper__content__post_form">
+      <%= form_with(model: @post, local: true) do |form| %>
+        <h3>
+          <span>投稿編集</span>
+        </h3>
+        <%= render partial: "form", locals: { form: form } %>
+      <% end %>
+    </div>
+  </div>
+</div>
