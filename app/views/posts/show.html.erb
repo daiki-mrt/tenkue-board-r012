@@ -1,0 +1,42 @@
+<div class="post_wrapper">
+  <div class="post_wrapper__content">
+    <h3>
+      <span>投稿詳細</span>
+    </h3>
+    <div class="post_wrapper__content__post_show">
+      <div class="post_detail">
+        <div class="post_detail__top_box">
+          <div class="post_detail__top_box__name">
+            <span>投稿者：<%= @post.user.name %></span>
+          </div>
+          <div class="post_detail__top_box__name">
+            <span>投稿日時：<%= show_posted_time(@post.created_at) %></span>
+          </div>
+        </div>  
+        <div class="post_detail__middle_box">
+          <span><%= @post.text %></span>
+        </div>
+        <div class="post_detail__bottom_box">
+          <ul class="post_detail__bottom_box__user_actions">
+            <li>
+              <i class="far fa-comment-alt"></i>
+            </li>
+            <li>
+              <i class="far fa-heart"></i>
+            </li>
+          </ul>
+          <% if @post.user == current_user %>
+            <div class="post_detail__bottom_box__admin_actions">
+              <%= link_to '削除', post_path(@post.id), method: :delete, data: { confirm: '本当に削除して良いですか?', cancel: 'やめる', commit: '削除する', disable_with: "処理中..."}, title: '削除確認' %>
+            </div>
+          <% end %>
+        </div>
+      </div>
+    </div>
+    <%# <div class="post_wrapper__content__comment_area">
+      <h4>
+        <span>コメントする</span>
+      </h4>
+    </div> %>
+  </div>
+</div>

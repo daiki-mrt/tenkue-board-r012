@@ -1,2 +1,11 @@
+@import "bootstrap-sprockets";
+@import "bootstrap";
 @import "reset";
+@import "config/variable";
+@import "modules/body";
 @import "modules/devise";
+@import "modules/header";
+@import "modules/footer";
+@import "pages/posts";
+@import "font-awesome-sprockets";
+@import "font-awesome";
