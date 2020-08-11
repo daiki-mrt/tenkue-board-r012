@@ -37,6 +37,8 @@
           transition: 0.5s;  
         }
         & a {
+          display: inline-block;
+          height: 64px;
           color: white;
           text-decoration: none;
         }
