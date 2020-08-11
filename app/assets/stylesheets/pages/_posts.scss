@@ -13,7 +13,7 @@
     }
   }
   &__content {
-    max-height: calc(100vh - 314px);
+    max-height: calc(100vh - 234px);
     margin: 0 160px;
     overflow: overlay;
 
@@ -150,7 +150,7 @@
       }
     }
   }
-  .post_index {
-    max-height: calc(100vh - 234px);
+  .scroll {
+    max-height: calc(100vh - 314px);
   }
 }
