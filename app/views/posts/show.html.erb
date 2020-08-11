@@ -51,12 +51,14 @@
               </div>
               <div class="comment_area__list__comment__right_box">
                 <div class="comment_area__list__comment__right_box__info">
-                  <span>
-                    <%= link_to '編集', edit_post_comment_path(@post, comment.id) %>
-                  </span>
-                  <span>
-                    <%= link_to '削除', post_comment_path(@post, comment.id), method: :delete, data: { confirm: '本当に削除して良いですか?', cancel: 'やめる', commit: '削除する', disable_with: "処理中..."}, title: '削除確認'  %>
-                  </span>
+                  <% if comment.user == current_user %>
+                    <span>
+                      <%= link_to '編集', edit_post_comment_path(@post, comment.id) %>
+                    </span>
+                    <span>
+                      <%= link_to '削除', post_comment_path(@post, comment.id), method: :delete, data: { confirm: '本当に削除して良いですか?', cancel: 'やめる', commit: '削除する', disable_with: "処理中..."}, title: '削除確認'  %>
+                    </span>
+                  <% end %>
                   <span>投稿日時：<%= show_created_time(comment.created_at) %></span>
                 </div>
                 <div class="comment_area__list__comment__right_box__text">
@@ -67,20 +69,22 @@
           <% end %>
         </ul>
       <% end %>
-      <div class="comment_area__form_box">
-        <%= form_with(model: [@post, @comment], local: true, class: "comment_area__form_box__form") do |form| %>
-          <div class="comment_area__form_box__form__field">
-            <%= form.text_area :text, placeholder: "コメントを入力", rows: "2" %>
-          </div>
-          <div class="comment_area__form_box__form__hidden_field">
-            <%= form.hidden_field :user_id, value: current_user.id %>
-            <%= form.hidden_field :post_id, value: @post.id %>
-          </div>
-          <div class="comment_area__form_box__form__action">
-            <%= form.submit "送信", class: "comment_area__form_box__form__action__btn"%>
-          </div>
-        <% end %>
-      </div>
+      <% if user_signed_in? %>
+        <div class="comment_area__form_box">
+          <%= form_with(model: [@post, @comment], local: true, class: "comment_area__form_box__form") do |form| %>
+            <div class="comment_area__form_box__form__field">
+              <%= form.text_area :text, placeholder: "コメントを入力", rows: "2" %>
+            </div>
+            <div class="comment_area__form_box__form__hidden_field">
+              <%= form.hidden_field :user_id, value: current_user.id %>
+              <%= form.hidden_field :post_id, value: @post.id %>
+            </div>
+            <div class="comment_area__form_box__form__action">
+              <%= form.submit "送信", class: "comment_area__form_box__form__action__btn"%>
+            </div>
+          <% end %>
+        </div>
+      <% end %>
     </div>
   </div>
 </div>
