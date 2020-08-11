@@ -1,4 +1,5 @@
 class PostsController < ApplicationController
+  skip_before_action :authenticate_user!, only: [:index, :show]
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
@@ -15,6 +16,12 @@ class PostsController < ApplicationController
   end
 
   def show
+    if flash[:comment_id].present?
+      @comment = Comment.find_by(id: flash[:comment_id])
+    else
+      @comment = Comment.new
+    end
+    @comments = Comment.where(post_id: @post.id)
   end
 
   def edit
