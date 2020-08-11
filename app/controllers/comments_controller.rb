@@ -15,6 +15,10 @@ class CommentsController < ApplicationController
     @comment.update(comment_params) ? (redirect_to post_path(@post.id)):(render :edit)
   end
 
+  def destroy
+    @comment.destroy ? (redirect_to post_path(@post.id)):(redirect_to post_path(@post.id), alert: '削除に失敗しました。')
+  end
+
   private
   def set_post
     @post = Post.find_by(id: params[:post_id])
