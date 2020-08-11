@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     else
       @comment = Comment.new
     end
-    @comments = Comment.where(post_id: @post.id)
+    @comments = Comment.where(post_id: @post.id).all.order("created_at DESC")
   end
 
   def edit
