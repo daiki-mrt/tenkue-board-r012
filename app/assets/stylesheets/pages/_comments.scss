@@ -3,7 +3,6 @@
   width: $width_content;
   margin: 24px auto;
   &__list {
-    // height: 135px;
     min-height: 135px;
     height: calc(100% - 2000px);
     margin-bottom: 24px;
@@ -77,7 +76,6 @@
           }
           &:focus {
             outline: none;
-            // border: $border_style_focus;
             border-radius: 25px;
             box-shadow: $shadow_focus;
           }
