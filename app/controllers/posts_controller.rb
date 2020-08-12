@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: [:show, :edit, :update, :destroy]
 
   def index
-    @posts = Post.all.order("created_at DESC")
+    @posts = Post.including.desc
   end
 
   def new
@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     else
       @comment = Comment.new
     end
-    @comments = Comment.where(post_id: @post.id).all.order("created_at DESC")
+    @comments = Comment.including.where(post_id: @post.id).desc
   end
 
   def edit
