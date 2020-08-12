@@ -27,10 +27,29 @@
         <div class="post_detail__bottom_box">
           <ul class="post_detail__bottom_box__user_actions">
             <li>
-              <i class="far fa-comment-alt"></i>
+              <% if user_signed_in? %>
+                <i class="far fa-comment-alt"></i>
+                <span><%= array_count(@post.comments)%></span>
+              <% else %>
+                <%= link_to new_post_comment_path(@post.id), class: "post_action_btn" do %>
+                  <i class="far fa-comment-alt"></i>
+                  <span><%= array_count(@post.comments)%></span>
+                <% end %>
+              <% end %>
             </li>
             <li>
-              <i class="far fa-heart"></i>
+              <% if user_signed_in? && current_user.already_liked?(@post) %>
+                <% like = Like.find_by(user_id: current_user.id, post_id: @post.id) %>
+                <%= link_to post_like_path(@post.id, like.id), method: :delete, class: "post_action_btn post_liked" do %>
+                  <i class="fas fa-heart"></i>
+                  <span><%= array_count(@post.likes)%></span>
+                <% end %>
+              <% else %>
+                <%= link_to post_likes_path(@post.id), method: :post, class: "post_action_btn" do %>
+                  <i class="far fa-heart"></i>
+                  <span><%= array_count(@post.likes)%></span>
+                <% end %>
+              <% end %>
             </li>
           </ul>
           <% if @post.user == current_user %>
@@ -73,7 +92,7 @@
         <div class="comment_area__form_box">
           <%= form_with(model: [@post, @comment], local: true, class: "comment_area__form_box__form") do |form| %>
             <div class="comment_area__form_box__form__field">
-              <%= form.text_area :text, placeholder: "コメントを入力", rows: "2" %>
+              <%= form.text_area :text, placeholder: "コメントを入力", rows: "2", autofocus: :true %>
             </div>
             <div class="comment_area__form_box__form__hidden_field">
               <%= form.hidden_field :user_id, value: current_user.id %>
