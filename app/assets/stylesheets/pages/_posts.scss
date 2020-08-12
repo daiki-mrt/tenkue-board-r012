@@ -13,9 +13,7 @@
     }
   }
   &__content {
-    max-height: calc(100vh - 234px);
     margin: 0 160px;
-    overflow: overlay;
 
   // 投稿フォーム
     &__post_form {
@@ -150,7 +148,14 @@
       }
     }
   }
+  .top_header {
+    position: fixed;
+    top: 112px;
+    right: 0;
+    left: 0;
+  }
   .scroll {
     max-height: calc(100vh - 314px);
+    overflow: overlay;
   }
 }
