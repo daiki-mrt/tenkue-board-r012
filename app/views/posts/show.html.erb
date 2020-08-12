@@ -29,21 +29,25 @@
             <li>
               <% if user_signed_in? %>
                 <i class="far fa-comment-alt"></i>
+                <span><%= array_count(@post.comments)%></span>
               <% else %>
                 <%= link_to new_post_comment_path(@post.id), class: "post_action_btn" do %>
                   <i class="far fa-comment-alt"></i>
+                  <span><%= array_count(@post.comments)%></span>
                 <% end %>
               <% end %>
             </li>
             <li>
               <% if user_signed_in? && current_user.already_liked?(@post) %>
                 <% like = Like.find_by(user_id: current_user.id, post_id: @post.id) %>
-                <%= link_to post_like_path(@post.id, like.id), method: :delete, class: "post_action_btn" do %>
+                <%= link_to post_like_path(@post.id, like.id), method: :delete, class: "post_action_btn post_liked" do %>
                   <i class="fas fa-heart"></i>
+                  <span><%= array_count(@post.likes)%></span>
                 <% end %>
               <% else %>
                 <%= link_to post_likes_path(@post.id), method: :post, class: "post_action_btn" do %>
                   <i class="far fa-heart"></i>
+                  <span><%= array_count(@post.likes)%></span>
                 <% end %>
               <% end %>
             </li>
