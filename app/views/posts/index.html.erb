@@ -1,5 +1,5 @@
 <div class="post_wrapper">
-  <div class="post_wrapper__header top_header">
+  <div class="post_wrapper__header">
     <h3>
       <span>投稿一覧</span>
     </h3>
@@ -29,7 +29,7 @@
                         <i class="far fa-comment-alt"></i>
                         <span><%= array_count(post.comments)%></span>
                       <% else %>
-                        <%= link_to new_post_comment_path(post.id), class: "post_action_btn" do %>
+                        <%= link_to new_post_comment_path(post.id), class: "post_action_btn comment_btn" do %>
                           <i class="far fa-comment-alt"></i>
                           <span><%= array_count(post.comments)%></span>
                         <% end %>
