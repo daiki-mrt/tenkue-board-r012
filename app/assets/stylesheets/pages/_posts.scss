@@ -136,8 +136,9 @@
             justify-content: space-between;
             width: 33%;
             padding: 0 12px;
-            & li {
+            & .post_action_btn {
               cursor: pointer;
+              color: black;
             }
           }
           &__admin_actions {
