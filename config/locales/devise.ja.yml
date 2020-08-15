@@ -2,6 +2,7 @@ ja:
   activerecord:
     attributes:
       user:
+        name: 名前
         confirmation_sent_at: パスワード確認送信時刻
         confirmation_token: パスワード確認用トークン
         confirmed_at: パスワード確認時刻
@@ -16,6 +17,7 @@ ja:
         last_sign_in_ip: 最終ログインIPアドレス
         locked_at: ロック時刻
         password: パスワード
+        password_confirmation: パスワード (確認用)
         remember_created_at: ログイン記憶時刻
         remember_me: ログインを記憶する
         reset_password_sent_at: パスワードリセット送信時刻

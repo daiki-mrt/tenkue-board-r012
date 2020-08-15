@@ -1,37 +1,20 @@
 .account_page {
   .account_page__inner {
-    width: 980px;
+    width: 482px;
     margin: 0 auto;
-    padding: 40px 60px;
+    padding: 40px 60px 10px;
     background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-
-    .account_page__inner--left, .account_page__inner--right {
-      float: left;
-      width: 50%;
-    }
-    &:after {
-      clear: both;
-      content: "";
-      display: block;
-    }
+    border: $border_style_input;
+    border-radius: 25px;
   }
 
   .account_page__header {
+    text-align: center;
     h2 {
-      margin-bottom: 10px;
+      margin-bottom: 24px;
       letter-spacing: 3px;
-      font-size: 40px;
+      font-size: $font_size_h2;
       font-weight: 200;
-
-      &:after {
-        content: '';
-        display: block;
-        width: 60px;
-        margin-top: 5px;
-        border-bottom: 1px solid #38aef0;
-      }
     }
 
     h5 {
@@ -49,7 +32,7 @@
   }
 
   .field {
-    margin-bottom: 10px;
+    margin-bottom: 16px;
 
     .field_label {
       padding: 10px 0;
@@ -66,9 +49,24 @@
       input {
         width: 100%;
         padding: 10px;
+        border: none;
+        border-bottom: $border_style_input;
         letter-spacing: 1px;
+        &:focus {
+          outline: none;
+        }
       }
     }
+  }
+
+  .actions {
+    text-align: center;
+  }
+
+  .devise_links {
+    margin-top: 48px;
+    border-top: $border_style_input;
+    text-align: center;
   }
 
   .btn {
@@ -83,7 +81,6 @@
   }
 
   input[type='submit'] {
-    float: left;
     margin-top: 20px;
     color: #fff;
     background-color: #38aef0;
