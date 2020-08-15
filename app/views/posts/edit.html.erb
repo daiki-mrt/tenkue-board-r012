@@ -1,4 +1,6 @@
 <div class="post_wrapper">
+  <% breadcrumb :post_edit, @post %>
+  <%= render "layouts/breadcrumbs" %>
   <div class="post_wrapper__content">
     <div class="post_wrapper__content__post_form">
       <%= form_with(model: @post, local: true) do |form| %>

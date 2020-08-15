@@ -12,3 +12,9 @@ crumb :post_show do |post|
   link "#{post.user.name}さんの投稿(#{post.id})", post
   parent :root
 end
+
+# post/edit
+crumb :post_edit do |post|
+  link "#{post.user.name}さんの投稿(#{post.id})の編集", post
+  parent :root
+end
