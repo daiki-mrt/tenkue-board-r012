@@ -30,9 +30,7 @@
         <div class="field">
           <div class="field_label">
             <%= f.label :password %>
-            <% if @minimum_password_length %>
-            <em>(<%= @minimum_password_length %> characters minimum)</em>
-            <% end %><br />
+            <em>(英字・数字を含む8文字以上32文字以下)</em>
           </div>
           <div class="field_input">
             <%= f.password_field :password, autocomplete: "new-password" %>
