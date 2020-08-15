@@ -1,4 +1,6 @@
 <div class="post_wrapper">
+  <% breadcrumb :post_show, @post %>
+  <%= render "layouts/breadcrumbs" %>
   <div class="post_wrapper__header">
     <h3>
       <span>投稿詳細</span>
@@ -54,6 +56,7 @@
           </ul>
           <% if @post.user == current_user %>
             <div class="post_detail__bottom_box__admin_actions">
+              <%= link_to '編集', edit_post_path(@post.id) %>
               <%= link_to '削除', post_path(@post.id), method: :delete, data: { confirm: '本当に削除して良いですか?', cancel: 'やめる', commit: '削除する', disable_with: "処理中..."}, title: '削除確認' %>
             </div>
           <% end %>

@@ -76,3 +76,4 @@ gem 'jquery-rails'
 gem 'rails-i18n'
 gem 'faker', "~> 2.8"
 gem 'kaminari'
+gem 'gretel'
