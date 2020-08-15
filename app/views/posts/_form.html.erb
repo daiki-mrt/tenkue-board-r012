@@ -1,4 +1,5 @@
 <div class="form_area">
+   <%= render 'layouts/error_messages', model: form.object %>
   <div class="form_area__field">
     <%= form.text_area :text, placeholder: "投稿内容を入力", rows: "10" %>
   </div>
