@@ -6,5 +6,5 @@ class Post < ApplicationRecord
   scope :desc,      -> {order('created_at DESC')}
   scope :including, -> {includes(:user)}
 
-  validates :text, presence: true
+validates :text, {length: { maximum: 140 }, presence: true}
 end
