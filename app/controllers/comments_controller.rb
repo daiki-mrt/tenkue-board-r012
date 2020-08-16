@@ -12,7 +12,8 @@ class CommentsController < ApplicationController
   end
 
   def edit
-    redirect_to post_path(@post.id), flash: {comment_id: @comment.id }
+    @comments = Comment.including.where(post_id: @post.id).desc
+    render 'posts/show'
   end
 
   def update
