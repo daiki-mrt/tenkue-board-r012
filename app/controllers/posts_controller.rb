@@ -16,11 +16,7 @@ class PostsController < ApplicationController
   end
 
   def show
-    if flash[:comment_id].present?
-      @comment = Comment.find_by(id: flash[:comment_id])
-    else
-      @comment = Comment.new
-    end
+    @comment = Comment.new
     @comments = Comment.including.where(post_id: @post.id).desc
   end
 
