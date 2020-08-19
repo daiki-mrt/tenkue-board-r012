@@ -1,0 +1,51 @@
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  width: 100%;
+  min-width: $fix_width;
+  box-shadow: 0 3px 3px 0 rgba(0, 0, 0, 0.2);
+  z-index: 5;
+  background-color: $color_theme;
+  &__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: $fix_width;
+    height: 64px;
+    margin: 0 auto;
+    color: white;
+    & h1 {
+      font-size: $font_size_h1;
+      font-weight: bold;
+      & a {
+        color: white;
+        text-decoration: none;
+      }
+    }
+    &__user_nav {
+      display: flex;
+      align-items: center;
+      &__btn {
+        height: 64px;
+        padding: 22px 8px;
+        &:hover {
+          background-color: $color_theme_opacity;
+          opacity: 0.8;
+          transition: 0.5s;  
+        }
+        & a {
+          display: inline-block;
+          height: 64px;
+          color: white;
+          text-decoration: none;
+        }
+      }
+      & .user_name {
+        margin-right: 8px;
+      }
+    }
+  }
+}

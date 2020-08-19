@@ -1,0 +1,192 @@
+.post_wrapper {
+  width: $fix_width;
+  height: 100%;
+  margin: 0 auto;
+  & h3 {
+    text-align: center;
+    font-size: $font_size_h3;
+  }
+  &__header {
+    padding: 0 160px;
+    .back_link {
+      margin: 16px 48px 12px;
+    }
+  }
+  &__content {
+    margin: 0 160px;
+
+  // 投稿フォーム
+    &__post_form {
+      padding: 48px;
+      border: $border_style_default;
+      .form_area {
+        padding: 40px 40px 0;
+        &__field {
+          margin: 0 auto;
+          & textarea {
+            width: 482px;
+            padding: 8px;
+          }
+        }
+        &__action {
+          margin-top: 24px;
+          text-align: center;
+          &__btn {
+            height: 50px;
+            padding: 0 30px;
+            line-height: 50px;
+            letter-spacing: 1px;
+            text-align: center;
+            border: none;
+            border-radius: 25px;
+            background-color: $color_theme;
+            color: white;
+            cursor: pointer;
+            &:hover {
+              opacity: 0.8;
+              transition: 0.5s;  
+            }
+            &:focus {
+              outline: none;
+              border-radius: 25px;
+              box-shadow: $shadow_focus;
+            }
+          }
+        }
+      }
+    }
+  // 投稿一覧
+    &__post_list {
+      padding: 48px;
+      & a {
+        text-decoration: none;
+        color: black;
+      }
+      & h4 {
+        text-align: center;
+      }
+      .post {
+        margin-bottom: 12px;
+        border: $border_style_default;
+        border-radius: 3px;
+        box-shadow: $shadow_content;
+        &:hover {
+          opacity: 0.8;
+          box-shadow: $shadow_focus;
+        }
+        &__top_box {
+          display: flex;
+          justify-content: space-between;
+          padding: 16px 24px;
+          color: $color_note;
+        }
+        &__middle_box {
+          padding: 8px 24px;
+          font-size: $font_size_content;
+          & span {
+            white-space: pre-wrap;
+          }
+        }
+        &__bottom_box {
+          display: flex;
+          position: relative;
+          height: 48px;
+          padding: 8px 24px;
+          font-size: $font_size_icon;
+          &__user_actions {
+            position: absolute;
+            left: 32px;
+            display: flex;
+            padding: 0 12px;
+            cursor: pointer;
+            & li {
+              width: 40px;
+              margin-right: 80px;
+              & span {
+                font-size: $font_size_defalt;
+              }
+            }
+          }
+          &__admin_actions {
+            position: absolute;
+            right: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80px;
+            font-size: $font_size_defalt;
+            & a {
+              color: $color_link;
+            }
+            & :hover {
+              text-decoration: underline;
+            }
+          }
+        }
+      }
+    }
+  // 投稿詳細
+    &__post_show {
+      padding: 0 48px;
+      .post_detail {
+        padding: 24px;
+        border: $border_style_default;
+        border-radius: 3px;
+        box-shadow: $shadow_content;
+        &__top_box {
+          display: flex;
+          justify-content: space-between;
+          color: $color_note;
+          font-size: $font_size_note_detail;
+        }
+        &__middle_box {
+          margin: 32px 0;
+          font-size: $font_size_content_detail;
+          & span {
+            white-space: pre-wrap;
+          }
+        }
+        &__bottom_box {
+          display: flex;
+          justify-content: space-between;
+          font-size: $font_size_icon;
+          &__user_actions {
+            display: flex;
+            padding: 0 12px;
+            & li {
+              width: 64px;
+              margin-right: 60px;
+              & span {
+                font-size: $font_size_defalt;
+              }
+            }
+          }
+          &__admin_actions {
+            line-height: 31px;
+            font-size: $font_size_defalt;
+          }
+        }
+      }
+    }
+  }
+  .scroll {
+    max-height: calc(100vh - 344px);
+    overflow: overlay;
+  }
+  .post_action_btn {
+    cursor: pointer;
+    color: black;
+    text-decoration: none;
+    &:hover {
+      color: $color_actioned;
+      text-shadow: 0px 0px 20px rgb(255, 0, 170)
+    }
+  }
+  .comment_btn:hover {
+    color: $color_note;
+    text-shadow: 0px 0px 20px rgb(124, 121, 123)
+  }
+  .post_liked {
+    color: $color_actioned;
+  }
+}

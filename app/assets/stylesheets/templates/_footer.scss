@@ -1,0 +1,25 @@
+.footer {
+  height: 64px;
+  width: 100%;
+  min-width: $fix_width;
+  background-color: $color_background;
+  &__bar {
+    width: $fix_width;
+    margin: 0 auto;
+    padding-top: 8px;
+    &__icon {
+      height: 32px;
+      font-size: $font_size_h4;
+      & a {
+        color: black;
+        text-decoration: none;
+      }
+    }
+    &__copylight {
+      height: 24px;
+      text-align: center;
+      font-size: $font_size_note;
+      color: $color_note;
+    }
+  }
+}

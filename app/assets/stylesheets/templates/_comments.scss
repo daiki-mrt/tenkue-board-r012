@@ -1,0 +1,86 @@
+.comment_area {
+  height: 100%;
+  width: $width_content;
+  margin: 24px auto;
+  &__list {
+    min-height: 135px;
+    height: calc(100% - 2000px);
+    margin-bottom: 24px;
+    &__comment {
+      display: flex;
+      padding: 12px;
+      border-bottom: $border_style_default;
+      &__left_box {
+        width: 96px;
+        color: $color_note;
+      }
+      &__right_box {
+        width: 444px;
+        &__info {
+          color: $color_note;
+          text-align: right;
+        }
+        &__text {
+          font-size: $font_size_content;
+          font-weight: bold;
+          & span {
+            white-space: pre-wrap;
+          }
+        }
+      }
+    }
+  }
+  &__form_box {
+    padding: 0 12px;
+    &__form {
+      position: fixed;
+      bottom: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      &__field {
+        & textarea {
+          resize: none;
+          width: 438px;
+          height: 68px;
+          margin-right: 12px;
+          padding: 12px;
+          border-radius: 25px;
+          overflow: hidden;
+          &:focus {
+            outline: none;
+            border: $border_style_focus;
+            border-radius: 25px;
+            box-shadow: $shadow_focus;
+          }
+        }
+      }
+      &__hidden_field {
+        display: hidden;
+      }
+      &__action {
+        &__btn {
+          height: 50px;
+          padding: 0 30px;
+          line-height: 50px;
+          letter-spacing: 1px;
+          text-align: center;
+          border: 1px;
+          border-radius: 25px;
+          background-color: $color_theme;
+          color: white;
+          cursor: pointer;
+          &:hover {
+            opacity: 0.8;
+            transition: 0.5s;  
+          }
+          &:focus {
+            outline: none;
+            border-radius: 25px;
+            box-shadow: $shadow_focus;
+          }
+        }
+      }
+    }
+  }
+}
