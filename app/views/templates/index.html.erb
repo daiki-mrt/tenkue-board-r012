@@ -1,0 +1,44 @@
+<div class="post_wrapper">
+  <div class="post_wrapper__header">
+    <h3>
+      <span>投稿一覧</span>
+    </h3>
+  </div>
+  <div class="post_wrapper__content">
+    <ul class="post_wrapper__content__post_list">
+      <%# 未投稿の場合は「まだ投稿されたスレッドはありません。」と表示するように条件分岐すること %>
+      <%# each文で投稿一覧を表示すること %>
+      <li>
+        <div class="post">
+          <div class="post__top_box">
+            <div class="post__top_box__name">
+              <span>投稿者：投稿者名</span>
+            </div>
+            <div class="post__top_box__time">
+              <span>投稿日時：投稿日時</span>
+            </div>
+          </div>  
+          <div class="post__middle_box">
+            <span>投稿内容</span>
+          </div>
+          <div class="post__bottom_box">
+            <ul class="post__bottom_box__user_actions">
+              <li>
+                <i class="far fa-comment-alt"></i>
+                <span>コメント数</span>
+              </li>
+              <li>
+                <i class="far fa-heart"></i>
+                <span>いいね数</span>
+              </li>
+            </ul>
+            <ul class="post__bottom_box__admin_actions">
+              <li>編集</li>
+              <li>削除</li>
+            </ul>
+          </div>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

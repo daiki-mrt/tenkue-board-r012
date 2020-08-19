@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>OurBoard</title>
+    <title>転クエ掲示板</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -11,11 +11,8 @@
   </head>
 
   <body>
-    <%= render 'layouts/header'%>
-    <%= render 'layouts/notifications' %>
     <div class="wrapper">
       <%= yield %>
     </div>
-    <%= render 'layouts/footer'%>
   </body>
 </html>
