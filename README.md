@@ -34,12 +34,16 @@
 - エラーメッセージを表示、日本語化
 
 ## DB設計（ER図）
-![ER図](https://user-images.githubusercontent.com/61058448/90724757-03b33900-e2fa-11ea-9952-671e11b79fe5.png)
+![ER図](https://user-images.githubusercontent.com/61058448/90863771-98856780-e3ca-11ea-8ec0-2a2b766ffec4.png)
 
 # 共同開発を進める手順
 1. 環境構築を完了していることを自ら確認
 2. 指定バージョンに揃える
-3. このリポジトリをクローン
+3. このリポジトリを下記手順にてクローン
+  1. チームメンバー1人のGitHubでリポジトリ(A)を作成（リポジトリ名は任意）
+  2. $ git clone https://github.com/Tenkue/tenkue_board.git
+  3. $ git remote set-url origin リポジトリ(A)のURL
+  4. $ git push origin master
 4. Issuesに載っている必須要件をそれぞれ実装
 5. チーム内でコードレビューし、LGTM出たらメンターにコードレビュー依頼
 6. メンターのLGTM出たらmasterブランチにマージ
