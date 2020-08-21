@@ -1,24 +1,54 @@
-# README
+# README（共同開発要項）
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 成果物
+掲示板アプリ  
+サンプル→ [転クエ掲示板](https://tenkue-board.herokuapp.com/)
 
-Things you may want to cover:
+## 参加要件
+- 環境構築完了し、指定バージョンに揃えられること（詳細は下記）
+- プロゲートでRuby、Railsを1周していること（もしくはそれと同程度のレベル感）
+- GitHubアカウントを持っていること
 
-* Ruby version
+## 人数とレビュー期間
+- 1チーム3名
+- メンターのレビュー期間は2週間
 
-* System dependencies
+## 環境/技術
+- Ruby 2.5.1
+- Rails 5.2.4
+- bundler 2.1.4
+- PostgreSQL 12.2
+- 記法：erb、Sass
+- ソースコード管理：GitHub
 
-* Configuration
+## 機能要件
+### [必須要件]
+- ゲストユーザーログインができる
+- 掲示板を投稿、編集、削除できる
+- 掲示板に対してコメントが書き込める
+- コメントの編集、削除ができる
+- 掲示板に対していいねができる（いいねの取り消しもできる）
+- 許可されていないページにアクセスするとrootパスへリダイレクト
+- バリデーション、正規表現を適切に行う
+- RSpecでモデルのテスト
+- エラーメッセージを表示、日本語化
 
-* Database creation
+## DB設計（ER図）
+![ER図](https://user-images.githubusercontent.com/61058448/90724757-03b33900-e2fa-11ea-9952-671e11b79fe5.png)
 
-* Database initialization
+# 共同開発を進める手順
+1. 環境構築を完了していることを自ら確認
+2. 指定バージョンに揃える
+3. このリポジトリをクローン
+4. Issuesに載っている必須要件をそれぞれ実装
+5. チーム内でコードレビューし、LGTM出たらメンターにコードレビュー依頼
+6. メンターのLGTM出たらmasterブランチにマージ
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 注意点・特記事項
+- クローンしたリポジトリは、チームメンバーいずれかのGitHubにプッシュすること
+- 雛形のリポジトリには、devise周りの実装は完了している
+- ビューファイル、CSSファイルは用意したテンプレートファイルを利用しても良い
+- タグは自由に変更してよい（ただし必須要件の指示に従うこと）
+- クラス名などは自由に変更してよい（ただしBEM記法は守ること）
+- メンターのサポートはコードレビューのみ。技術的な質問は基本受け付けない（チーム内で解消してもらう）
+- メンターのレビュー対応期間は開発開始から2週間以内。それを超えたらレビューは行わない
