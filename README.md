@@ -20,6 +20,7 @@
 - PostgreSQL 12.2
 - 記法：erb、Sass
 - ソースコード管理：GitHub
+- タスク管理：Trello（Googleアカウントか、Trelloのアカウントが必要です）
 
 ## 機能要件
 ### [必須要件]
@@ -44,7 +45,8 @@
     1. $ git clone https://github.com/Tenkue/tenkue_board.git
     1. $ git remote set-url origin リポジトリ(A)のURL
     1. $ git push origin master
-1. Issuesに載っている必須要件をそれぞれ実装
+1. [Trelloのテンプレート](https://trello.com/b/5f3fca179910357813b0f124/user18257938/recommend)からボードを作成
+1. Trelloに載っているタスクを実装する
 1. チーム内でコードレビューし、LGTM出たらメンターにコードレビュー依頼
 1. メンターのLGTM出たらmasterブランチにマージ
 
