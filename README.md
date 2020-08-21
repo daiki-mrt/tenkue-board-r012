@@ -38,15 +38,15 @@
 
 # 共同開発を進める手順
 1. 環境構築を完了していることを自ら確認
-2. 指定バージョンに揃える
-3. このリポジトリを下記手順にてクローン
-  1. チームメンバー1人のGitHubでリポジトリ(A)を作成（リポジトリ名は任意）
-  2. $ git clone https://github.com/Tenkue/tenkue_board.git
-  3. $ git remote set-url origin リポジトリ(A)のURL
-  4. $ git push origin master
-4. Issuesに載っている必須要件をそれぞれ実装
-5. チーム内でコードレビューし、LGTM出たらメンターにコードレビュー依頼
-6. メンターのLGTM出たらmasterブランチにマージ
+1. 指定バージョンに揃える
+1. このリポジトリを下記手順にてクローン
+    1. チームメンバー1人のGitHubでリポジトリ(A)を作成（リポジトリ名は任意）
+    1. $ git clone https://github.com/Tenkue/tenkue_board.git
+    1. $ git remote set-url origin リポジトリ(A)のURL
+    1. $ git push origin master
+1. Issuesに載っている必須要件をそれぞれ実装
+1. チーム内でコードレビューし、LGTM出たらメンターにコードレビュー依頼
+1. メンターのLGTM出たらmasterブランチにマージ
 
 ## 注意点・特記事項
 - クローンしたリポジトリは、チームメンバーいずれかのGitHubにプッシュすること
