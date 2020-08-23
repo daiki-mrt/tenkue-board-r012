@@ -61,6 +61,7 @@
 1. このリポジトリを下記手順にてクローン
     1. ファシリテーターのGitHubでリポジトリ(A)を作成（リポジトリ名は任意）
     1. $ git clone https://github.com/Tenkue/tenkue_board.git
+    1. $ cd tenkue_board
     1. $ git remote set-url origin リポジトリ(A)のURL
     1. $ git push origin master
 1. [Trello](https://trello.com/b/ZEmfa89s/%E8%BB%A2%E3%82%AF%E3%82%A8%E5%85%B1%E5%90%8C%E9%96%8B%E7%99%BAissues%EF%BC%88%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%EF%BC%89/user18257938/recommend)のテンプレートからボードを作成（テンプレートの変更を加えないこと！）してチームメンバー間で共有
