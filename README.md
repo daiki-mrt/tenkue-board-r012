@@ -61,6 +61,7 @@
 1. 指定バージョンに揃える
 1. このリポジトリを下記手順にてクローン
     1. ファシリテーターのGitHubでリポジトリ(A)を作成（リポジトリ名は任意）
+    1. チームメンバーにリポジトリへのアクセス権限を付与する
     1. $ git clone https://github.com/Tenkue/tenkue_board.git
     1. $ cd tenkue_board
     1. $ git remote set-url origin リポジトリ(A)のURL
