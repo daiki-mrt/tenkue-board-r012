@@ -66,7 +66,7 @@
     1. $ cd tenkue_board
     1. $ git remote set-url origin リポジトリ(A)のURL
     1. $ git push origin master
-1. [Trello](https://trello.com/b/ZEmfa89s/%E8%BB%A2%E3%82%AF%E3%82%A8%E5%85%B1%E5%90%8C%E9%96%8B%E7%99%BAissues%EF%BC%88%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%EF%BC%89/user18257938/recommend)のテンプレートからボードを作成（テンプレートの変更を加えないこと！）してチームメンバー間で共有
+1. [Trello](https://trello.com/b/ZEmfa89s/%E8%BB%A2%E3%82%AF%E3%82%A8%E5%85%B1%E5%90%8C%E9%96%8B%E7%99%BAissues%EF%BC%88%E3%83%86%E3%83%B3%E3%83%97%E3%83%AC%E3%83%BC%E3%83%88%EF%BC%89/user18257938/recommend)のテンプレートからボードを作成（テンプレートの変更を加えないこと！）してチームメンバー間で共有し、URLをチームチャンネルのトピックに設定
 1. 載っている必須要件をそれぞれ実装開始
 1. 1ブランチの実装が完了したらチーム内でコードレビューを行ってメンバーからLGTMをもらう
 1. チームチャンネル内で、メンター(壮)にコードレビューを依頼
