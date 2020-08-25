@@ -15,7 +15,7 @@
 - SlackやGitHubでのレスポンスをできる限り早く行えること（どんなに遅くても24時間以内）
 
 ### あると望ましい経験
-- Railsチュートリアルや[『現場で使える Ruby on Rails 5速習実践ガイド』](https://www.amazon.co.jp/dp/4839962227/)での学習
+- [Railsチュートリアル](https://railstutorial.jp/)や[『現場で使える Ruby on Rails 5速習実践ガイド』](https://www.amazon.co.jp/dp/4839962227/)での学習
 - GitHubを使用した経験
 - 個人でRailsアプリを開発、デプロイした経験
 
