@@ -22,7 +22,7 @@
 - Ruby 2.5.1
 - Rails 5.2.4
 - bundler 2.1.4
-- PostgreSQL 12.2
+- PostgreSQL 12.4
 - 記法：erb、Sass
 - ソースコード管理：GitHub
 
