@@ -98,4 +98,6 @@ ver.1.00
 転クエ公式メンター [すな](https://twitter.com/suna_tech)、[壮](https://twitter.com/sew_sou19)
 
 ## 変更履歴
-ver.1.0 2020/8/27 作成
+| ver | date | summary |
+----|----|---- 
+| 1.0 | 2020/8/27 | 初版作成 |
