@@ -1,31 +1,32 @@
 <header class="header">
   <div class="header__bar">
     <h1>
-      <%# ルートパスへのリンクを設置 %>
-      <span>転クエ掲示板</span>
+      <%= link_to "転クエ掲示板", root_path %>
     </h1>
-    <%# ログイン状態に応じて表記を変更すること %>
-    <ul class="header__bar__user_nav">
-      <li class="user_name">
-        <span>ユーザー名 さん</span>
-      </li>
-      <li class="header__bar__user_nav__btn">
-        ログアウト
-      </li>
-      <li class="header__bar__user_nav__btn">
-        投稿する
-      </li>
-    </ul>
-    <ul class="header__bar__user_nav">
-      <li class="header__bar__user_nav__btn">
-        ゲストログイン
-      </li>
-      <li class="header__bar__user_nav__btn">
-        ログイン
-      </li>
-      <li class="header__bar__user_nav__btn">
-        新規登録
-      </li>
-    </ul>
+    <% if user_signed_in? %>
+      <ul class="header__bar__user_nav">
+        <li class="user_name">
+          <span><%= "#{current_user.name} さん" %></span>
+        </li>
+        <li class="header__bar__user_nav__btn">
+          <%= link_to "ログアウト", destroy_user_session_path, method: :delete %>
+        </li>
+        <li class="header__bar__user_nav__btn">
+          <%= link_to "投稿する", new_post_path %>
+        </li>
+      </ul>
+    <% else %>
+      <ul class="header__bar__user_nav">
+        <li class="header__bar__user_nav__btn">
+          ゲストログイン
+        </li>
+        <li class="header__bar__user_nav__btn">
+          <%= link_to "ログイン", new_user_session_path %>
+        </li>
+        <li class="header__bar__user_nav__btn">
+          <%= link_to "新規登録", new_user_registration_path %> 
+        </li>
+      </ul>
+    <% end %>
   </div>
 </header>
