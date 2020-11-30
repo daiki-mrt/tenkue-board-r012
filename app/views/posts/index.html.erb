@@ -17,7 +17,7 @@
                   <span>投稿者：<%= post.user.name %></span>
                 </div>
                 <div class="post__top_box__time">
-                  <span>投稿日時：<%= post.updated_at %></span>
+                  <span>投稿日時：<%= post.updated_at.strftime("%Y-%m-%d %H:%M") %></span>
                 </div>
               </div>
               <div class="post__middle_box">
