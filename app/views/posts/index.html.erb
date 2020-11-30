@@ -34,10 +34,12 @@
                     <span>いいね数</span>
                   </li>
                 </ul>
-                <ul class="post__bottom_box__admin_actions">
-                  <li>編集</li>
-                  <li>削除</li>
-                </ul>
+                <% if user_signed_in? && post.user_id == current_user.id %>
+                  <ul class="post__bottom_box__admin_actions">
+                    <li>編集</li>
+                    <li>削除</li>
+                  </ul>
+                <% end %>
               </div>
             </div>
           </li>
