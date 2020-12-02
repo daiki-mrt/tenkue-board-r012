@@ -20,6 +20,9 @@ class PostsController < ApplicationController
   end
 
   def edit
+    if current_user.id != @post.user_id
+      redirect_to root_path
+    end
   end
 
   def update
