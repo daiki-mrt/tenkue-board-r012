@@ -11,6 +11,7 @@
       <% else %>
         <% @posts.each do |post| %>
           <li>
+            <%= link_to post_path(post) do %>
             <div class="post">
               <div class="post__top_box">
                 <div class="post__top_box__name">
@@ -42,6 +43,7 @@
                 <% end %>
               </div>
             </div>
+            <% end %>
           </li>
         <% end %>
       <% end %>
