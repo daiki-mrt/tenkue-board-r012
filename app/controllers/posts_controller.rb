@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: :index
-  before_action :set_post, only: [:edit, :update]
+  before_action :set_post, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.eager_load(:user).all
