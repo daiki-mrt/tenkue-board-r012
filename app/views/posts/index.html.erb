@@ -6,39 +6,45 @@
   </div>
   <div class="post_wrapper__content">
     <ul class="post_wrapper__content__post_list">
-      <%# 未投稿の場合は「まだ投稿されたスレッドはありません。」と表示するように条件分岐すること %>
-      <%# each文で投稿一覧を表示すること %>
-      <li>
-        <div class="post">
-          <div class="post__top_box">
-            <div class="post__top_box__name">
-              <span>投稿者：投稿者名</span>
+      <% if @posts.length == 0 %>
+        <h3>まだ投稿されたスレッドはありません。</h3>
+      <% else %>
+        <% @posts.each do |post| %>
+          <li>
+            <div class="post">
+              <div class="post__top_box">
+                <div class="post__top_box__name">
+                  <span>投稿者：<%= post.user.name %></span>
+                </div>
+                <div class="post__top_box__time">
+                  <span>投稿日時：<%= post.updated_at.strftime("%Y-%m-%d %H:%M") %></span>
+                </div>
+              </div>
+              <div class="post__middle_box">
+                <span><%= post.content %></span>
+              </div>
+              <div class="post__bottom_box">
+                <ul class="post__bottom_box__user_actions">
+                  <li>
+                    <i class="far fa-comment-alt"></i>
+                    <span>コメント数</span>
+                  </li>
+                  <li>
+                    <i class="far fa-heart"></i>
+                    <span>いいね数</span>
+                  </li>
+                </ul>
+                <% if user_signed_in? && post.user_id == current_user.id %>
+                  <ul class="post__bottom_box__admin_actions">
+                    <li>編集</li>
+                    <li>削除</li>
+                  </ul>
+                <% end %>
+              </div>
             </div>
-            <div class="post__top_box__time">
-              <span>投稿日時：投稿日時</span>
-            </div>
-          </div>  
-          <div class="post__middle_box">
-            <span>投稿内容</span>
-          </div>
-          <div class="post__bottom_box">
-            <ul class="post__bottom_box__user_actions">
-              <li>
-                <i class="far fa-comment-alt"></i>
-                <span>コメント数</span>
-              </li>
-              <li>
-                <i class="far fa-heart"></i>
-                <span>いいね数</span>
-              </li>
-            </ul>
-            <ul class="post__bottom_box__admin_actions">
-              <li>編集</li>
-              <li>削除</li>
-            </ul>
-          </div>
-        </div>
-      </li>
+          </li>
+        <% end %>
+      <% end %>
     </ul>
   </div>
 </div>
