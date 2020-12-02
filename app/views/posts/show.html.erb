@@ -4,8 +4,10 @@
       <span>投稿詳細</span>
     </h3>
     <div class="back_link">
-      <i class="fas fa-angle-double-left"></i>
-      <span>一覧へ戻る</span>
+      <%= link_to root_path do %>
+        <i class="fas fa-angle-double-left"></i>
+        <span>一覧へ戻る</span>
+      <% end %>
     </div>
   </div>
   <div class="post_wrapper__content scroll">
