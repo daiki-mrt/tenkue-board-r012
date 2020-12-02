@@ -33,10 +33,12 @@
               <span>いいね数</span>
             </li>
           </ul>
-          <div class="post_detail__bottom_box__admin_actions">
-            編集
-            削除
-          </div>
+          <% if user_signed_in? && current_user.id == @post.user.id %>
+            <div class="post_detail__bottom_box__admin_actions">
+              <%= link_to "編集", edit_post_path(@post) %>
+              <%= link_to "削除", post_path(@post), method: :delete %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
