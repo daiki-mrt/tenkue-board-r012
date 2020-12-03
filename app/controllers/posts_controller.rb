@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   before_action :authenticate_user!, except: :index
-  before_action :use_rimit, only: [:edit, :update, :destroy]
+  before_action :use_limit, only: [:edit, :update, :destroy]
 
   def index
     @posts = Post.eager_load(:user).all
@@ -40,7 +40,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:content).merge(user_id: current_user.id)
   end
 
-  def use_rimit
+  def use_limit
     @post = Post.find(params[:id])
 
     if current_user.id != @post.user_id
