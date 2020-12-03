@@ -1,0 +1,28 @@
+<div class="post_wrapper">
+  <div class="post_wrapper__content">
+    <div class="post_wrapper__content__post_form">
+      <%= form_with model: model, local: true do |f| %>
+        <h3>
+          <span><%= heading %></span>
+        </h3>
+        <div class="form_area">
+          <% if model.errors.any? %>
+            <div class="vali_alert">
+              <ul>
+                <% model.errors.full_messages.each do |message| %>
+                  <li><%= message %></li>
+                <% end %>
+              </ul>
+            </div>
+          <% end %>
+          <div class="form_area__field">
+            <%= f.text_area :content, placeholder:"投稿内容を入力", size: "30x10" %>
+          </div>
+          <div class="form_area__action">
+            <%= f.submit "投稿", class:"form_area__action__btn" %>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  </div>
+</div>
