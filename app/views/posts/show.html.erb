@@ -4,8 +4,10 @@
       <span>投稿詳細</span>
     </h3>
     <div class="back_link">
-      <i class="fas fa-angle-double-left"></i>
-      <span>一覧へ戻る</span>
+      <%= link_to root_path do %>
+        <i class="fas fa-angle-double-left"></i>
+        <span>一覧へ戻る</span>
+      <% end %>
     </div>
   </div>
   <div class="post_wrapper__content scroll">
@@ -13,14 +15,14 @@
       <div class="post_detail">
         <div class="post_detail__top_box">
           <div class="post_detail__top_box__name">
-            <span>投稿者：投稿者名</span>
+            <span>投稿者：<%= @post.user.name %></span>
           </div>
           <div class="post_detail__top_box__name">
-            <span>投稿日時：投稿日時</span>
+            <span>投稿日時：<%= @post.updated_at.strftime("%Y-%m-%d %H:%M") %></span>
           </div>
         </div>  
         <div class="post_detail__middle_box">
-          <span>投稿内容</span>
+          <span><%= @post.content %></span>
         </div>
         <div class="post_detail__bottom_box">
           <ul class="post_detail__bottom_box__user_actions">
@@ -33,10 +35,12 @@
               <span>いいね数</span>
             </li>
           </ul>
-          <div class="post_detail__bottom_box__admin_actions">
-            編集
-            削除
-          </div>
+          <% if user_signed_in? && current_user.id == @post.user.id %>
+            <div class="post_detail__bottom_box__admin_actions">
+              <%= link_to "編集", edit_post_path(@post) %>
+              <%= link_to "削除", post_path(@post), method: :delete, data: {confirm: "本当に削除して良いですか?",cancel: "やめる",commit: "削除する"}, title: "削除確認" %>
+            </div>
+          <% end %>
         </div>
       </div>
     </div>
