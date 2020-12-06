@@ -2,8 +2,12 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    @comment.save
-    redirect_to root_path
+    if not @comment.save
+      @comment.errors.full_messages.each do |message|
+        flash[:alert] = message
+      end
+    end
+    redirect_to controller: :posts, action: :show, id: params[:post_id]
   end
 
   private
