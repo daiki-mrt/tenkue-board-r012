@@ -46,22 +46,23 @@
     </div>
     <div class="comment_area">
       <ul class="comment_area__list">
-      <%# コメントがある場合は、全てのコメントが表示されていること %>
-        <li class="comment_area__list__comment">
-          <div class="comment_area__list__comment__left_box">
-            <span>コメント投稿者</span>
-          </div>
-          <div class="comment_area__list__comment__right_box">
-            <div class="comment_area__list__comment__right_box__info">
-              <span>編集</span>
-              <span>削除</span>
-              <span>投稿日時：投稿日時</span>
+        <% @comments.each do |comment| %>
+          <li class="comment_area__list__comment">
+            <div class="comment_area__list__comment__left_box">
+              <span><%= User.find(comment.user_id).name %></span>
             </div>
-            <div class="comment_area__list__comment__right_box__text">
-              <span>コメント内容</span>
+            <div class="comment_area__list__comment__right_box">
+              <div class="comment_area__list__comment__right_box__info">
+                <span>編集</span>
+                <span>削除</span>
+                <span>投稿日時：<%= comment.updated_at.strftime("%Y-%m-%d %H:%M") %></span>
+              </div>
+              <div class="comment_area__list__comment__right_box__text">
+                <span><%= comment.comment %></span>
+              </div>
             </div>
-          </div>
-        </li>
+          </li>
+        <% end %>
       </ul>
       <div class="comment_area__form_box">
         <%= form_with model: [@post, @comment], local: true do |f| %>
