@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
-    @comments = Comment.all.where(post_id: params[:id])
+    @comments = Comment.eager_load(:user).where(post_id: params[:id])
   end
 
   def edit

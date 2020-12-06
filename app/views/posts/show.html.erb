@@ -49,7 +49,7 @@
         <% @comments.each do |comment| %>
           <li class="comment_area__list__comment">
             <div class="comment_area__list__comment__left_box">
-              <span><%= User.find(comment.user_id).name %></span>
+              <span><%= comment.user.name %></span>
             </div>
             <div class="comment_area__list__comment__right_box">
               <div class="comment_area__list__comment__right_box__info">
