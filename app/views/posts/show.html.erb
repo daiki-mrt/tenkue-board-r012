@@ -64,7 +64,7 @@
           </li>
         <% end %>
       </ul>
-      <% if user_signed_in? %>%
+      <% if user_signed_in? %>
         <div class="comment_area__form_box">
           <%= form_with model: [@post, @comment], local: true do |f| %>
             <div class="comment_area__form_box__form">
