@@ -20,7 +20,7 @@
           <div class="post_detail__top_box__name">
             <span>投稿日時：<%= @post.updated_at.strftime("%Y-%m-%d %H:%M") %></span>
           </div>
-        </div>  
+        </div>
         <div class="post_detail__middle_box">
           <span><%= @post.content %></span>
         </div>
@@ -64,7 +64,25 @@
         </li>
       </ul>
       <div class="comment_area__form_box">
-        <%# コメントのフォームを設置 %>
+        <%= form_with model: [@post, @comment], local: true do |f| %>
+          <div class="comment_area__form_box__form">
+            <% if @comment.errors.any? %>
+              <div class="vali_alert">
+                <ul>
+                  <% @comment.errors.full_messages.each do |message| %>
+                    <li><%= message %></li>
+                  <% end %>
+                </ul>
+              </div>
+            <% end %>
+            <div class="comment_area__form_box__form__field">
+              <%= f.text_area :comment, placeholder:"コメントを入力" %>
+            </div>
+            <div class="comment_area__form_box__form__action">
+              <%= f.submit "送信", class:"comment_area__form_box__form__action__btn" %>
+            </div>
+          </div>
+        <% end %>
       </div>
     </div>
   </div>
