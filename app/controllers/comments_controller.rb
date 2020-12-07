@@ -2,12 +2,15 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.new(comment_params)
-    if not @comment.save
-      @comment.errors.full_messages.each do |message|
-        flash[:alert] = message
+    if @comment.save
+      redirect_to post_path(params[:post_id])
+    else
+      respond_to do |format|
+        format.js {  @comment.errors.full_messages.each do |message|
+          flash[:alert] = message
+        end }
       end
     end
-    redirect_to post_path(params[:post_id])
   end
 
   private
