@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
     else
       respond_to do |format|
         format.js {  @comment.errors.full_messages.each do |message|
-          flash[:alert] = message
+          flash.now[:alert] = message
         end }
       end
     end
