@@ -7,7 +7,7 @@ class CommentsController < ApplicationController
         flash[:alert] = message
       end
     end
-    redirect_to controller: :posts, action: :show, id: params[:post_id]
+    redirect_to post_path(params[:post_id])
   end
 
   private
