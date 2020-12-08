@@ -21,6 +21,19 @@ class CommentsController < ApplicationController
     render "posts/show"
   end
 
+  def update
+    @comment = Comment.find(params[:id])
+    if @comment.update(comment_params)
+      redirect_to post_path(params[:post_id])
+    else
+      respond_to do |format|
+        format.js {  @comment.errors.full_messages.each do |message|
+          flash.now[:alert] = message
+        end }
+      end
+    end
+  end
+
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
