@@ -13,6 +13,14 @@ class CommentsController < ApplicationController
     end
   end
 
+  def edit
+    @comment = Comment.find(params[:id])
+    # posts#showへ
+    @post = Post.find(params[:post_id])
+    @comments = @post.comments.eager_load(:user)
+    render "posts/show"
+  end
+
   def destroy
     @comment = Comment.find(params[:id])
     @comment.destroy
