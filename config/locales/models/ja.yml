@@ -17,3 +17,5 @@ ja:
         created_at: 投稿日時
         created_at: 編集日時
         content: 投稿内容
+      comment:
+        comment: コメント
