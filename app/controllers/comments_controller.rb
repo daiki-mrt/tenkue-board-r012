@@ -6,11 +6,7 @@ class CommentsController < ApplicationController
     if @comment.save
       redirect_to post_path(params[:post_id])
     else
-      respond_to do |format|
-        format.js {  @comment.errors.full_messages.each do |message|
-          flash.now[:alert] = message
-        end }
-      end
+      respond_alert
     end
   end
 
@@ -25,11 +21,7 @@ class CommentsController < ApplicationController
     if @comment.update(comment_params)
       redirect_to post_path(params[:post_id])
     else
-      respond_to do |format|
-        format.js {  @comment.errors.full_messages.each do |message|
-          flash.now[:alert] = message
-        end }
-      end
+      respond_alert
     end
   end
 
@@ -49,6 +41,14 @@ class CommentsController < ApplicationController
 
       if current_user.id != @comment.user_id
         redirect_to post_path(params[:post_id])
+      end
+    end
+
+    def respond_alert
+      respond_to do |format|
+        format.js {  @comment.errors.full_messages.each do |message|
+          flash.now[:alert] = message
+        end }
       end
     end
 end
