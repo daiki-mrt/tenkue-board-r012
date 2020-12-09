@@ -31,8 +31,24 @@
               <span><%= @comments.length %></span>
             </li>
             <li>
-              <i class="far fa-heart"></i>
-              <span>いいね数</span>
+              <% if user_signed_in? %>
+                <% if @post.likes.exists?(user_id: current_user.id, post_id: @post.id) %>
+                  <%= link_to post_likes_path(@post.id,@post.likes.find_by(user_id: current_user.id, post_id: @post.id)),method: :delete, style: "color: crimson"  do %>
+                    <i class="fas fa-heart"></i>
+                    <span><%= @post.likes.length %></span>
+                  <% end %>
+                <% else %>
+                  <%= link_to post_likes_path(@post.id),method: :post do %>
+                    <i class="far fa-heart"></i>
+                    <span><%= @post.likes.length %></span>
+                  <% end %>
+                <% end %>
+              <% else %>
+                <%= link_to post_likes_path(@post.id),method: :post do %>
+                  <i class="far fa-heart"></i>
+                  <span><%= @post.likes.length %></span>
+                <% end %>
+              <% end %>
             </li>
           </ul>
           <% if user_signed_in? && current_user.id == @post.user.id %>
