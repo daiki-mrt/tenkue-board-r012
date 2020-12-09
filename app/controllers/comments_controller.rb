@@ -17,7 +17,7 @@ class CommentsController < ApplicationController
   def edit
     # posts#showへ
     @post = Post.find(params[:post_id])
-    @comments = @post.comments.eager_load(:user)
+    @comments = @post.comments.eager_load(:user).order(created_at: "DESC")
     render "posts/show"
   end
 

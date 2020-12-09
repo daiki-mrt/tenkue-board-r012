@@ -22,7 +22,7 @@ class PostsController < ApplicationController
   def show
     @post = Post.find(params[:id])
     @comment = Comment.new
-    @comments = @post.comments.eager_load(:user)
+    @comments = @post.comments.eager_load(:user).order(created_at: "DESC")
   end
 
   def edit
