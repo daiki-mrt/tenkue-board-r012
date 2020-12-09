@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :access_limit, only: [:edit, :update, :destroy]
 
   def index
-    @posts = Post.eager_load(:user).all
+    @posts = Post.eager_load(:user).all.order(created_at: "DESC")
   end
 
   def new
