@@ -53,8 +53,10 @@
             </div>
             <div class="comment_area__list__comment__right_box">
               <div class="comment_area__list__comment__right_box__info">
-                <%= link_to "編集", edit_post_comment_path(post_id: @post.id, id: comment.id) %>
-                <%= link_to "削除", post_comment_path(post_id: @post.id, id: comment.id), method: :delete, data: {confirm: "本当に削除して良いですか?",cancel: "やめる",commit: "削除する"}, title: "削除確認" %>
+                <% if user_signed_in? && (comment.user_id == current_user.id) %>
+                  <%= link_to "編集", edit_post_comment_path(post_id: @post.id, id: comment.id) %>
+                  <%= link_to "削除", post_comment_path(post_id: @post.id, id: comment.id), method: :delete, data: {confirm: "本当に削除して良いですか?",cancel: "やめる",commit: "削除する"}, title: "削除確認" %>
+                <% end %>
                 <span>投稿日時：<%= comment.updated_at.strftime("%Y-%m-%d %H:%M") %></span>
               </div>
               <div class="comment_area__list__comment__right_box__text">
