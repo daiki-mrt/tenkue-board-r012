@@ -69,7 +69,7 @@
           <%= form_with model: [@post, @comment], remote: true do |f| %>
             <div class="comment_area__form_box__form">
               <div class="comment_area__form_box__form__hidden_field">
-                <%# <%= f.hidden_field :post_id, value: params[:id] %>
+                <%= f.hidden_field :post_id, value: @post.id %>
               </div>
               <div class="comment_area__form_box__form__field">
                 <%= f.text_area :comment, placeholder:"コメントを入力" %>
