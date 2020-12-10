@@ -1,5 +1,6 @@
 class CommentsController < ApplicationController
   before_action :access_limit, only: [:edit, :update, :destroy]
+  before_action :set_comment, only: [:edit, :update, :destroy]
   
   def create
     @comment = Comment.new(comment_params)
@@ -37,6 +38,7 @@ class CommentsController < ApplicationController
     end
 
     def access_limit
+    def set_comment
       @comment = Comment.find(params[:id])
 
       if current_user.id != @comment.user_id
