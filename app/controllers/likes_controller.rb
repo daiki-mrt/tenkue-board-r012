@@ -4,7 +4,7 @@ class LikesController < ApplicationController
   before_action -> { access_limit(@like) }, only: [:destroy]
 
   def create
-    @like = current_user.likes.build(like_param)
+    @like = current_user.likes.build(params.permit(:post_id))
 
     #お気に入り作成ボタンを連打した時の対策
     if Like.exists?(user_id: @like.user_id, post_id: @like.post_id)
@@ -23,10 +23,6 @@ class LikesController < ApplicationController
   end
 
   private
-  def like_param
-    params.permit(:post_id)
-  end
-
   def set_like
     @like = Like.find_by(user_id: current_user.id, post_id: params[:post_id])
   end
