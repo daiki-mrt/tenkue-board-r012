@@ -1,17 +1,17 @@
 <% if user_signed_in? %>
   <% if post.likes.exists?(user_id: current_user.id, post_id: post.id) %>
-    <%= link_to post_likes_path(post.id),method: :delete, style: "color: crimson"  do %>
+    <%= link_to post_likes_path(post.id),method: :delete, class: "post_action_btn",style: "color: crimson" do %>
       <i class="fas fa-heart"></i>
       <span><%= post.likes.length %></span>
     <% end %>
   <% else %>
-    <%= link_to post_likes_path(post.id),method: :post do %>
+    <%= link_to post_likes_path(post.id),method: :post, class: "post_action_btn" do %>
       <i class="far fa-heart"></i>
       <span><%= post.likes.length %></span>
     <% end %>
   <% end %>
 <% else %>
-  <%= link_to post_likes_path(post.id),method: :post do %>
+  <%= link_to post_likes_path(post.id),method: :post, class: "post_action_btn" do %>
     <i class="far fa-heart"></i>
     <span><%= post.likes.length %></span>
   <% end %>
