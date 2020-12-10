@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
-  before_action :access_limit, only: [:edit, :update, :destroy]
   before_action :set_comment, only: [:edit, :update, :destroy]
+  before_action -> { access_limit(@comment) }, only: [:edit, :update, :desroy]
   
   def create
     @comment = Comment.new(comment_params)
@@ -37,13 +37,8 @@ class CommentsController < ApplicationController
       params.require(:comment).permit(:comment,:post_id).merge(user_id: current_user.id)
     end
 
-    def access_limit
     def set_comment
       @comment = Comment.find(params[:id])
-
-      if current_user.id != @comment.user_id
-        redirect_to post_path(params[:post_id])
-      end
     end
 
     def respond_alert
