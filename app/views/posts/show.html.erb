@@ -31,8 +31,7 @@
               <span><%= @comments.length %></span>
             </li>
             <li>
-              <i class="far fa-heart"></i>
-              <span>いいね数</span>
+              <%= render partial: "shared/like_link", locals: {post: @post, current_user: current_user} %>
             </li>
           </ul>
           <% if user_signed_in? && current_user.id == @post.user.id %>
