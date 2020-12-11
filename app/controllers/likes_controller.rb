@@ -7,7 +7,7 @@ class LikesController < ApplicationController
     @like = current_user.likes.build(params.permit(:post_id))
 
     #お気に入り作成ボタンを連打した時の対策
-    if Like.exists?(user_id: @like.user_id, post_id: @like.post_id)
+    if Like.exist_or_not?(@like)
       redirect_back(fallback_location: root_path)
     else
       @like.save
