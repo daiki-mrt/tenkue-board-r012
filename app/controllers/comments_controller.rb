@@ -1,6 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!, only: [:edit]
-  before_action :set_comment, only: [:edit, :update, :destroy]
+  before_action -> { set_model(controller_name) }, only: [:edit, :update, :destroy]
   before_action -> { access_limit(@comment) }, only: [:edit, :update, :desroy]
 
   def create

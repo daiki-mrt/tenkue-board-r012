@@ -11,4 +11,18 @@ class ApplicationController < ActionController::Base
         redirect_to root_path
     end
   end
+
+  # 引数のコントローラー名に応じて値を取得する
+  def set_model(controller_name)
+    if controller_name == "posts"
+      @post = Post.find(params[:id])
+    elsif controller_name == "comments"
+      @comment = Comment.find(params[:id])
+    elsif controller_name == "likes"
+      #いいね解除ボタンを連打した時、2回目以降は値が取得できないため直前のページに戻す。
+      if not @like = Like.find_by(id: params[:id])
+        redirect_back(fallback_location: root_path)
+      end
+    end
+  end
 end
