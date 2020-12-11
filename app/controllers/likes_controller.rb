@@ -24,7 +24,7 @@ class LikesController < ApplicationController
 
   private
   def set_like
-    @like = Like.find_by(user_id: current_user.id, post_id: params[:post_id])
+    @like = Like.find(params[:id])
   end
 
   def access_limit(model)
