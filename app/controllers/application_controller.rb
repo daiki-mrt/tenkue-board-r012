@@ -15,11 +15,12 @@ class ApplicationController < ActionController::Base
 
   # 引数のコントローラー名に応じて値を取得する
   def set_model(controller_name)
-    if controller_name == "posts"
+    case controller_name
+    when "posts" then
       @post = Post.find(params[:id])
-    elsif controller_name == "comments"
+    when "comments" then
       @comment = Comment.find(params[:id])
-    elsif controller_name == "likes"
+    when "likes" then
       #いいね解除ボタンを連打した時、2回目以降は値が取得できないため直前のページに戻す。
       if not @like = Like.find_by(id: params[:id])
         redirect_back(fallback_location: root_path)
