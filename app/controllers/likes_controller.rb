@@ -1,5 +1,4 @@
 class LikesController < ApplicationController
-  before_action :authenticate_user!
   before_action -> { set_model(controller_name) }, only: [:destroy]
   before_action -> { access_limit(@like) }, only: [:destroy]
 
