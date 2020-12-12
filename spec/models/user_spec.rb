@@ -55,4 +55,12 @@ RSpec.describe User, type: :model do
       end
     end
   end
+
+  describe "ゲストユーザの登録・検索" do
+    it "self.guestメソッドはゲストユーザを返す" do
+      guest_user = User.guest
+      expect(guest_user.name).to eq "ゲストユーザ"
+      expect(guest_user.email).to eq "guest@example.com"
+    end
+  end
 end
