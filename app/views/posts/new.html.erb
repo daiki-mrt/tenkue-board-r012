@@ -1,3 +1,4 @@
 <div class="post_wrapper">
+  <%= render partial: "shared/breadcrumbs", locals: {breadcrumb: :post_new, model: @post } %>
   <%= render partial: "shared/post-form", locals: {model: @post, heading: "新規投稿"} %>
 </div>
